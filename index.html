@@ -12,12 +12,12 @@
         />
     </head>
     <body>
-        <nav class="fixed-nav">
+        <nav class="fixed-nav" id="main-nav">
             <div class="nav-left">Sorcery Plzeň</div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-            <label for="nav-toggle" class="nav-toggle-label">
+            <a href="#main-nav" class="nav-toggle-label">
                 <span></span>
-            </label>
+            </a>
+            <a href="#" class="nav-close-button">&times;</a>
             <ul class="nav-right">
                 <li><a href="#benefits">Proč Socery?</a></li>
                 <li><a href="#how-to-play">Jak Hrát</a></li>
@@ -36,11 +36,23 @@
                 umění.
             </h1>
             <div class="card-fan">
-                <img src="images/atlantean_fate.webp" alt="Sorcery Card 1" />
-                <img src="images/rolling_boulder.webp" alt="Sorcery Card 2" />
-                <img src="images/battlemage.webp" alt="Sorcery Card 3" />
-                <img src="images/firebreathing.webp" alt="Sorcery Card 4" />
-                <img src="images/pudge_butcher.webp" alt="Sorcery Card 5" />
+                <a href="#modal-atlantean_fate"
+                    ><img src="images/atlantean_fate.webp" alt="Sorcery Card 1"
+                /></a>
+                <a href="#modal-rolling_boulder"
+                    ><img
+                        src="images/rolling_boulder.webp"
+                        alt="Sorcery Card 2"
+                /></a>
+                <a href="#modal-battlemage"
+                    ><img src="images/battlemage.webp" alt="Sorcery Card 3"
+                /></a>
+                <a href="#modal-firebreathing"
+                    ><img src="images/firebreathing.webp" alt="Sorcery Card 4"
+                /></a>
+                <a href="#modal-pudge_butcher"
+                    ><img src="images/pudge_butcher.webp" alt="Sorcery Card 5"
+                /></a>
             </div>
             <a href="#play" class="cta-button">Chci si zahrát!</a>
         </header>
@@ -241,5 +253,25 @@
                 <a href="https://lukasfrei.cz/" target="_blank">Lukáš Frei</a>.
             </p>
         </footer>
+        <div id="modal-atlantean_fate" class="modal">
+            <a href="#" class="close">&times;</a>
+            <img class="modal-content" src="images/atlantean_fate.webp" />
+        </div>
+        <div id="modal-rolling_boulder" class="modal">
+            <a href="#" class="close">&times;</a>
+            <img class="modal-content" src="images/rolling_boulder.webp" />
+        </div>
+        <div id="modal-battlemage" class="modal">
+            <a href="#" class="close">&times;</a>
+            <img class="modal-content" src="images/battlemage.webp" />
+        </div>
+        <div id="modal-firebreathing" class="modal">
+            <a href="#" class="close">&times;</a>
+            <img class="modal-content" src="images/firebreathing.webp" />
+        </div>
+        <div id="modal-pudge_butcher" class="modal">
+            <a href="#" class="close">&times;</a>
+            <img class="modal-content" src="images/pudge_butcher.webp" />
+        </div>
     </body>
 </html>

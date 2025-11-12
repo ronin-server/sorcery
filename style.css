@@ -160,60 +160,60 @@ section {
 }
 
 /* Pozice a rotace jednotlivých karet */
-.card-fan img:nth-child(1) {
+.card-fan a:nth-child(1) img {
     transform: translateX(calc(-50% - 280px)) rotate(-30deg); /* Nejlevější karta */
     z-index: 1;
 }
 
-.card-fan img:nth-child(2) {
+.card-fan a:nth-child(2) img {
     transform: translateX(calc(-50% - 140px)) rotate(-15deg); /* Druhá zleva */
     z-index: 2;
 }
 
-.card-fan img:nth-child(3) {
+.card-fan a:nth-child(3) img {
     transform: translateX(-50%) rotate(0deg); /* Středová karta */
     z-index: 3;
 }
 
-.card-fan img:nth-child(4) {
+.card-fan a:nth-child(4) img {
     transform: translateX(calc(-50% + 140px)) rotate(15deg); /* Druhá zprava */
     z-index: 2;
 }
 
-.card-fan img:nth-child(5) {
+.card-fan a:nth-child(5) img {
     transform: translateX(calc(-50% + 280px)) rotate(30deg); /* Nejpravější karta */
     z-index: 1;
 }
 
 /* Efekt při najetí myší - zachování původní pozice a rotace */
-.card-fan img:nth-child(1):hover {
+.card-fan a:nth-child(1):hover img {
     transform: translateX(calc(-50% - 280px)) rotate(-30deg) translateY(-50px)
         scale(1.2);
     z-index: 10; /* Přesun do popředí */
     box-shadow: 0 15px 30px rgba(77, 157, 224, 0.8); /* Zvýrazněný stín při najetí myší */
 }
 
-.card-fan img:nth-child(2):hover {
+.card-fan a:nth-child(2):hover img {
     transform: translateX(calc(-50% - 140px)) rotate(-15deg) translateY(-50px)
         scale(1.2);
     z-index: 10;
     box-shadow: 0 15px 30px rgba(77, 157, 224, 0.8);
 }
 
-.card-fan img:nth-child(3):hover {
+.card-fan a:nth-child(3):hover img {
     transform: translateX(-50%) rotate(0deg) translateY(-50px) scale(1.2);
     z-index: 10;
     box-shadow: 0 15px 30px rgba(77, 157, 224, 0.8);
 }
 
-.card-fan img:nth-child(4):hover {
+.card-fan a:nth-child(4):hover img {
     transform: translateX(calc(-50% + 140px)) rotate(15deg) translateY(-50px)
         scale(1.2);
     z-index: 10;
     box-shadow: 0 15px 30px rgba(77, 157, 224, 0.8);
 }
 
-.card-fan img:nth-child(5):hover {
+.card-fan a:nth-child(5):hover img {
     transform: translateX(calc(-50% + 280px)) rotate(30deg) translateY(-50px)
         scale(1.2);
     z-index: 10;
@@ -358,11 +358,50 @@ section {
     height: 100%;
 }
 
-/* Hamburger Menu */
-.nav-toggle {
+/* Modal */
+.modal {
     display: none;
+    position: fixed;
+    z-index: 1001;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
+.modal:target {
+    display: block;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hamburger Menu */
 .nav-toggle-label {
     display: none;
     cursor: pointer;
@@ -393,6 +432,10 @@ section {
     top: 8px;
 }
 
+.nav-close-button {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .nav-right {
         position: fixed;
@@ -415,8 +458,24 @@ section {
         display: block;
     }
 
-    .nav-toggle:checked ~ .nav-right {
+    #main-nav:target .nav-right {
         left: 0;
+    }
+
+    #main-nav:target .nav-toggle-label {
+        display: none;
+    }
+
+    #main-nav:target .nav-close-button {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        text-decoration: none;
+        z-index: 1001;
     }
 
     .card-fan {
